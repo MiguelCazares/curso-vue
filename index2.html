@@ -14,11 +14,21 @@
     const vm = Vue.createApp({
       data(){
         return{
-          attr:"alt",
-          img: "https://www.educaciontrespuntocero.com/wp-content/uploads/2020/04/mejores-bancos-de-imagenes-gratis.jpg"
+          counter: 0
         }
       },
-      template: ' <img v-bind:[attr]="img" v-bind:alt="img"/>'
+      methods: {
+        increment(){
+          this.counter++;
+        },
+        decrement(){
+          this.counter--;
+        },
+        reset(){
+          this.counter = 0;
+        }
+      },
+      template: '<p> {{ counter }}</p> <button v-on:click="decrement">-</button>  <button v-on:click="increment">+</button> <button v-on:click="reset">reset</button></div>'
     }).mount('#app');
     console.log(vm);
   </script>
