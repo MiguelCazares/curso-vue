@@ -8,15 +8,16 @@
 <body>
   <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
   <div id="app">
-      <img v-bind:src="" alt=""/>
+     
   </div>
   <script>
     const vm = Vue.createApp({
       data(){
         return{
-         
+         img: "https://www.educaciontrespuntocero.com/wp-content/uploads/2020/04/mejores-bancos-de-imagenes-gratis.jpg"
         }
       },
+      template: ' <img v-bind:src="img" v-bind:alt="img"/>'
     }).mount('#app');
     console.log(vm);
   </script>
